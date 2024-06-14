@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Cheat Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .click-to-copy, .copied-message {
+            display: block;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #4A5568;
+            cursor: pointer;
+        }
+
+        .copied-message {
+            color: #38A169; /* Green color for 'Copied!' message */
+            display: none;
+        }
+
+        .command-cell:hover .click-to-copy {
+            text-decoration: underline;
+        }
+
+        /* Increased padding and margin for better spacing */
+        .task-cell {
+            padding-right: 2rem;
+            vertical-align: middle;
+        }
+
+        /* Styling for section headers */
+        .section-header {
+            background-color: #edf2f7; /* Light grey background */
+            font-weight: bold;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-top: 2px solid #cbd5e0;
+        }
+
+        .sub-section-header {
+            background-color: #f7fafc; /* Slightly lighter grey */
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-top: 1px solid #e2e8f0;
+            font-weight: normal;
+        }
+
+        /* Styling for table rows */
+        .hover-effect:hover {
+            background-color: #f0f4f8;
+        }
+
+        /* Increased margin between table sections */
+        .section-spacing {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold text-center mb-8">Development Cheat Sheet</h1>
+
+        <!-- Unified Development Table -->
+        <div class="section-spacing">
+            <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 border-b">TASK</th>
+                        <th class="px-4 py-2 border-b">COMMANDS/STEPS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Frontend Local Deployment -->
+                    <tr>
+                        <td colspan="2" class="section-header text-blue-600">Frontend Development - Local Deployment</td>
+                    </tr>
+                    <tr class="hover-effect">
+                        <td class="px-4 py-2 border-b task-cell">Install Expo CLI</td>
+                        <td class="px-4 py-2 border-b command-cell" onclick="copyCommand(this)">
+                            <code class="block bg-gray-200 rounded p-2">npm install -g expo-cli</code>
+                            <span class="click-to-copy">Click to copy</span>
+                            <span class="copied-message">Copied!</span>
+                        </td>
+                    </tr>
+                    <tr class="hover-effect">
+                        <td class="px-4 py-2 border-b task-cell">Start Local Development</td>
+                        <td class="px-4 py-2 border-b command-cell" onclick="copyCommand(this)">
+                            <code class="block bg-gray-200 rounded p-2">expo start</code>
+                            <span class="click-to-copy">Click to copy</span>
+                            <span class="copied-message">Copied!</span>
+                        </td>
+                    </tr>
+
+                    <!-- Frontend Online Deployment (Vercel) -->
+                    <tr>
+                        <td colspan="2" class="section-header text-blue-600">Frontend Development - Online Deployment (Vercel)</td>
+                    </tr>
+                    <tr class="hover-effect">
+                        <td class="px-4 py-2 border-b task-cell">Deploy to Vercel (Production)</td>
+                        <td class="px-4 py-2 border-b command-cell" onclick="copyCommand(this)">
+                            <code class="block bg-gray-200 rounded p-2">vercel --prod</code>
+                            <span class="click-to-copy">Click to copy</span>
+                            <span class="copied-message">Copied!</span>
+                        </td>
+                    </tr>
+                    <tr class="hover-effect">
+                        <td class="px-4 py-2 border-b task-cell">Deploy to Vercel (Preview)</td>
+                        <td class="px-4 py-2 border-b command-cell" onclick="copyCommand(this)">
+                            <code class="block bg-gray-200 rounded p-2">vercel</code>
+                            <span class="click-to-copy">Click to copy</span>
+                            <span class="copied-message">Copied!</span>
+                        </td>
+                    </tr>
+
+                    <!-- Backend Local Deployment -->
+                    <tr>
+                        <td colspan="2" class="section-header text-green-600">Backend Development - Local Deployment</td>
+                    </tr>
+                    <tr class="hover-effect">
+                        <td class="px-4 py-2 border-b task-cell">Install Dependencies</td>
+                        <td class="px-4 py-2 border-b command-cell" onclick="copyCommand(this)">
+                            <code class="block bg-gray-200 rounded p-2">npm install</code>
+                            <span class="click-to-copy">Click to copy</span>
+                            <span class="copied-message">Copied!</span>
+                        </td>
+                    </tr>
+                    <tr class="hover-effect">
+                        <td class="px-4 py-2 border-b task-cell">Start Local Server</td>
+                        <td class="px-4 py-2 border-b command-cell" onclick="copyCommand(this)">
+                            <code class="block bg-gray-200 rounded p-2">npm start</code>
+                            <span class="click-to-copy">Click to copy</span>
+                            <span class="copied-message">Copied!</span>
+                        </td>
+                    </tr>
+
+                    <!-- Backend Online Deployment (Vercel) -->
+                    <tr>
+                        <td colspan="2" class="section-header text-green-600">Backend Development - Online Deployment (Vercel)</td>
+                    </tr>
+                    <tr class="hover-effect">
+                        <td class="px-4 py-2 border-b task-cell">Deploy to Vercel (Production)</td>
+                        <td class="px-4 py-2 border-b command-cell" onclick="copyCommand(this)">
+                            <code class="block bg-gray-200 rounded p-2">vercel --prod</code>
+                            <span class="click-to-copy">Click to copy</span>
+                            <span class="copied-message">Copied!</span>
+                        </td>
+                    </tr>
+                    <tr class="hover-effect">
+                        <td class="px-4 py-2 border-b task-cell">Deploy to Vercel (Preview)</td>
+                        <td class="px-4 py-2 border-b command-cell" onclick="copyCommand(this)">
+                            <code class="block bg-gray-200 rounded p-2">vercel</code>
+                            <span class="click-to-copy">Click to copy</span>
+                            <span class="copied-message">Copied!</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function copyCommand(element) {
+            // Copy the command text to the clipboard
+            const codeElement = element.querySelector('code');
+            navigator.clipboard.writeText(codeElement.innerText).then(() => {
+                // Show the "Copied!" message
+                const copiedMessage = element.querySelector('.copied-message');
+                copiedMessage.style.display = 'block';
+
+                // Hide the "Click to copy" message
+                const clickToCopy = element.querySelector('.click-to-copy');
+                clickToCopy.style.display = 'none';
+
+                // Reset the messages after a delay
+                setTimeout(() => {
+                    copiedMessage.style.display = 'none';
+                    clickToCopy.style.display = 'block';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
